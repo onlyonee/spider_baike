@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 
 
 class HtmlParser(object):
-
     def parse(self, page_url, html_cont):
         if page_url is None or html_cont is None:
             return
@@ -27,7 +26,6 @@ class HtmlParser(object):
             new_urls.add(new_full_url)
         return new_urls
 
-
     def _get_new_data(self, page_url, soup):
         res_data = {}
 
@@ -35,7 +33,7 @@ class HtmlParser(object):
 
         res_data['url'] = page_url
         # <dd class="lemmaWgt-lemmaTitle-title"><h1>Python</h1>
-        title_node = soup.find('dd', class_= "lemmaWgt-lemmaTitle-title").find("h1")
+        title_node = soup.find('dd', class_="lemmaWgt-lemmaTitle-title").find("h1")
         res_data['title'] = title_node.get_text()
 
         summary_node = soup.find('div', class_="lemma-summary")

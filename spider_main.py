@@ -35,10 +35,10 @@ import url_manager, html_downloader, html_outputer, html_parser
 
 class SpiderMain(object):
     def __init__(self):
-        self.urls = url_manager.UrlManager()
-        self.downloader = html_downloader.HtmlDownloader()
-        self.parser = html_parser.HtmlParser()
-        self.outputer = html_outputer.HtmlOutputer()
+        self.urls = url_manager.UrlManager()  # URL管理器
+        self.downloader = html_downloader.HtmlDownloader()  # 网页下载
+        self.parser = html_parser.HtmlParser()  # 网页解析
+        self.outputer = html_outputer.HtmlOutputer()  # 打印
 
     def craw(self, root_url):
         count = 1
